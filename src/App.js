@@ -13,6 +13,7 @@ function App() {
       .then((json) => {
         setCoins(json);
         //selectedCoinPrice에 첫코인의 가격을 넣어두기
+        //selectedCoinPrice의초기값이 0인 경우 금액입력을 해도 결과가 NaN이 되버림
         setSelectedCoinPrice(json[0].quotes.USD.price);
         setLoading(false);
       });
